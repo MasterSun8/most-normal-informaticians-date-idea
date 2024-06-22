@@ -1,0 +1,118 @@
+:root {
+    --dark-text: #f7def7;
+    --dark-background: #5d375d;
+    --dark-primary: #47000a;
+    --dark-secondary: #821c43;
+    --dark-accent: #d4354d;
+
+    --light-text: #210821;
+    --light-background: #c8a2c8;
+    --light-primary: #ffb8c1;
+    --light-secondary: #e37da4;
+    --light-accent: #ca2b43;
+}
+
+:root {
+	--text: var(--light-text);
+	--background: var(--light-background);
+	--primary: var(--light-primary);
+	--secondary: var(--light-secondary);
+	--accent: var(--light-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: var(--dark-text);
+		--background: var(--dark-background);
+		--primary: var(--dark-primary);
+		--secondary: var(--dark-secondary);
+		--accent: var(--dark-accent);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--text: var(--light-text);
+		--background: var(--light-background);
+		--primary: var(--light-primary);
+		--secondary: var(--light-secondary);
+		--accent: var(--light-accent);
+	}
+}
+
+.dark {
+	--text: var(--dark-text);
+	--background: var(--dark-background);
+	--primary: var(--dark-primary);
+	--secondary: var(--dark-secondary);
+	--accent: var(--dark-accent);
+}
+
+.light {
+	--text: var(--light-text);
+	--background: var(--light-background);
+	--primary: var(--light-primary);
+	--secondary: var(--light-secondary);
+	--accent: var(--light-accent);
+}
+
+body {
+	font-family: monospace;
+	color: var(--text);
+	background-color: var(--background);
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+button {
+	all: unset;
+	width: fit-content;
+	user-select: none;
+	padding: 1%;
+	margin: 0.1vh;
+	background-color: var(--primary);
+	color: var(--text);
+	border-radius: 1vw;
+}
+
+button:hover,
+button:focus {
+	background-color: var(--primary);
+	color: var(--secondary);
+}
+
+button:hover {
+	box-shadow: 0px 0px 2vw var(--accent);
+}
+
+button:active {
+	background-color: var(--primary);
+	color: var(--background);
+}
+
+#darkmode {
+	position: absolute;
+	top: 1vh;
+	right: 1vw;
+}
+
+#tab {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1vh 0px;
+}
+
+#encounter {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1vh 0px;
+	justify-content: space-evenly;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	border: 1px solid var(--primary);
+}
