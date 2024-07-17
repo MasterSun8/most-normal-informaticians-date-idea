@@ -1,0 +1,63 @@
+::root{
+    --sum: 0;
+}
+
+#piechart{
+	transform: rotate(270deg);
+	width: 200px;
+	height: 200px;
+	background: var(--background);
+	scale: -1 1;
+}
+
+#piechart circle {
+	stroke: var(--primary);
+	r: 25%;
+	cx: 50%;
+	cy: 50%;
+	stroke-width: 50%;
+	fill: none;
+}
+
+#piechart #abilities{
+    stroke: black;
+    stroke-dasharray: var(--abilities) 200%;
+    --sum: calc(var(--sum) + var(--abilities))
+}
+
+#piechart #kinetic{
+    stroke: aliceblue;
+    stroke-dasharray: var(--kinetic) 200%;
+    stroke-dashoffset: var(--sum);
+    --sum: calc(var(--sum) + var(--abilities))
+}
+
+#piechart #arc{
+    stroke: aqua;
+    stroke-dasharray: var(--arc) 200%;
+    stroke-dashoffset: -35%;
+}
+
+#piechart #void{
+    stroke: indigo;
+    stroke-dasharray: var(--void) 200%;
+    stroke-dashoffset: -50%;
+}
+
+#piechart #solar{
+    stroke: orange;
+    stroke-dasharray: var(--solar) 200%;
+    stroke-dashoffset: -65%;
+}
+
+#piechart #stasis{
+    stroke: darkblue;
+    stroke-dasharray: var(--stasis) 200%;
+    stroke-dashoffset: -80%;
+}
+
+#piechart #strand{
+    stroke: green;
+    stroke-dasharray: var(--strand) 200%;
+    stroke-dashoffset: -95%;
+}
